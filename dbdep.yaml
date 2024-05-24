@@ -41,8 +41,8 @@ spec:
           fsType: ext4 
       initContainers:
         - name: busybox
-          image: busybox:latest
-          command: ["rm", "rf", "/var/lib/mysql/lost+found"]
+          image: busybox
+          args: ["rm", "rf", "/var/lib/mysql/lost+found"]
           volumeMounts:
           - mountPath: /var/lib/mysql
             name: vprodb-data    
